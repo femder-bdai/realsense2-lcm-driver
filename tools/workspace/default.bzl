@@ -15,6 +15,7 @@ load("//tools/workspace/libtiff:repository.bzl", "libtiff_repository")
 load("//tools/workspace/opencv:repository.bzl", "opencv_repository")
 load("//tools/workspace/realsense2:repository.bzl", "realsense2_repository")
 load("//tools/workspace/tbb:repository.bzl", "tbb_repository")
+load("//tools/workspace/libpng_internal:repository.bzl", "libpng_internal_repository")
 
 def add_default_repositories(excludes = [], mirrors = DEFAULT_MIRRORS):
     # N.B. We do *not* pass `mirrors = ` into the drake_add_default_... call.
@@ -36,4 +37,6 @@ def add_default_repositories(excludes = [], mirrors = DEFAULT_MIRRORS):
     if "realsense2" not in excludes:
         realsense2_repository(name = "realsense2")
     if "tbb" not in excludes:
-        tbb_repository(name = "tbb")
+        tbb_repository(name = "onetbb_internal")
+    if "libpng" not in excludes:
+        libpng_internal_repository(name = "libpng_internal", mirrors = mirrors)

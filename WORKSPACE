@@ -9,6 +9,12 @@ load("//tools/workspace:drake.bzl", "drake_repository")
 
 drake_repository()
 
+# # Run a helper rule that brings in Drake.  To use a local checkout of Drake, or
+# # to change which git commit is downloaded, refer to the comments in drake.bzl.
+# load("//tools/workspace:lcmtypes.bzl", "lcmtypes_repository")
+
+# lcmtypes_repository()
+
 # Run a helper rule that senses which OS we're using.
 load("//tools/workspace:os.bzl", "os_repository")
 

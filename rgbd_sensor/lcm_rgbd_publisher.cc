@@ -7,7 +7,7 @@
 #include <stdexcept>
 
 #include <drake/common/text_logging.h>
-#include <robotlocomotion/image_array_t.hpp>
+#include <drake/lcmt_image_array.hpp>
 #include <zlib.h>
 
 #include "rs2_lcm/camera_description_t.hpp"
@@ -149,7 +149,7 @@ void LcmRgbdPublisher::PublishImages() {
   uint64_t utime = (tv.tv_sec * 1000000) + tv.tv_usec;
 
   std::shared_ptr<const RawImageData> depth_image, color_image;
-  robotlocomotion::image_array_t images{};
+  lcmt_image_array images{};
   images.header.seq = seq_++;
   images.header.utime = utime;
   uint64_t timestamp = 0;
@@ -250,7 +250,7 @@ void LcmRgbdPublisher::PublishImages() {
   }
 
   images.num_images = images.images.size();
-  lcm_->publish<robotlocomotion::image_array_t>(lcm_channel_name_, &images);
+  lcm_->publish<lcmt_image_array>(lcm_channel_name_, &images);
 }
 
 }  // namespace rs2_lcm

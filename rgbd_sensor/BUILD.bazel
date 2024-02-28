@@ -46,8 +46,13 @@ cc_library(
         ":rgbd_sensor",
         "//lcmtypes:lcmtypes_rs2_cc",
         "@drake//common:essential",
+        "@drake//lcmtypes:header",
+        "@drake//lcm",
+        "@drake//systems/framework",
+        "@drake//systems/lcm",
+        "@drake//systems/primitives",
+        "@drake//systems/sensors:lcm_image_array_to_images",
         "@lcm",
-        "@lcmtypes_robotlocomotion",
         "@zlib",
     ],
 )
@@ -94,7 +99,6 @@ cc_binary(
         ":real_sense_d400",
         "@boost//:boost_headers",
         "@boost//:boost_system",
-        "@drake//common:text_logging_gflags",
         "@gflags",
     ],
 )

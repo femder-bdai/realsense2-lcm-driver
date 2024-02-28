@@ -18,8 +18,8 @@ load(
 # 5. Run `bazel build`; it should successfully download now.
 #
 (DRAKE_COMMIT, DRAKE_CHECKSUM) = (
-    "0303727239528f1c2c075252681fdfd1e5da9362",
-    "40c19927d3bda3143b61b5db6f55f61aa55e137156745997793532378c067a73",
+    "ddb32f9dba9db9984b9292ad5227a8911a5950e7",
+    "3774824b5be3fb58a7f6adf0447f50ab7d45eaf3f42e65e5d2d9ca12b0d40efb",
 )
 
 # ================ IMPLEMENTATION DETAILS ================
